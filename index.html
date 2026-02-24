@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>বাইতুল হামদ জামে মসজিদ | আল্টিমেট ম্যানেজমেন্ট</title>
+  <title>বাইতুল হামদ জামে মসজিদ | প্রিমিয়াম ম্যানেজমেন্ট</title>
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -20,13 +20,12 @@
     }
   </script>
   <style>
-    /* ----- সমস্ত পূর্বের স্টাইল অক্ষত ----- */
+    /* ----- প্রিমিয়াম স্টাইল (পূর্বের সব) ----- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Noto Sans Bengali', sans-serif;
       font-size: 18px;
@@ -34,30 +33,20 @@
       min-height: 100vh;
       background-color: #0a0f1a;
     }
-
-    /* ব্যাকগ্রাউন্ড */
     .login-bg {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       background: url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
       filter: brightness(0.4) saturate(1.3);
       z-index: -2;
     }
-
     .app-bg {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       background: url('https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
       filter: brightness(0.25) saturate(1.2);
       z-index: -2;
     }
-
     .overlay {
       background: rgba(0, 10, 18, 0.85);
       backdrop-filter: blur(6px);
@@ -67,7 +56,6 @@
       display: flex;
       flex-direction: column;
     }
-
     .container {
       max-width: 1300px;
       margin: 0 auto;
@@ -76,8 +64,6 @@
       display: flex;
       flex-direction: column;
     }
-
-    /* লগইন কার্ড */
     .login-wrapper {
       display: flex;
       justify-content: center;
@@ -85,7 +71,6 @@
       flex: 1;
       width: 100%;
     }
-
     #loginBox {
       max-width: 480px;
       width: 100%;
@@ -93,25 +78,22 @@
       backdrop-filter: blur(12px);
       border-radius: 40px;
       padding: 45px 40px;
-      box-shadow: 0 40px 70px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 215, 0, 0.3);
-      border: 1px solid rgba(255, 215, 0, 0.4);
+      box-shadow: 0 40px 70px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,215,0,0.3);
+      border: 1px solid rgba(255,215,0,0.4);
       text-align: center;
       color: #000;
     }
-
     .mosque-icon {
       font-size: 5rem;
       color: #c49b3f;
       margin-bottom: 15px;
     }
-
     #loginBox h2 {
       color: #0b4f2b;
       font-weight: 700;
       font-size: 2.4rem;
       margin-bottom: 15px;
     }
-
     .subtitle {
       color: #2d3e50;
       margin-bottom: 30px;
@@ -120,7 +102,6 @@
       font-weight: 500;
       font-size: 1.2rem;
     }
-
     #loginBox input {
       background: #f5f7fa;
       border: 1px solid #d4dcec;
@@ -131,12 +112,10 @@
       font-size: 1.1rem;
       color: #000;
     }
-
     #loginBox input::placeholder {
       color: #666;
       font-size: 1rem;
     }
-
     #loginBox button {
       background: linear-gradient(145deg, #0b6b35, #064d26);
       border: none;
@@ -149,20 +128,15 @@
       cursor: pointer;
       transition: 0.2s;
     }
-
     .login-footer {
       margin-top: 25px;
       color: #2d3e50;
       font-size: 1rem;
     }
-
     /* স্প্ল্যাশ স্ক্রিন */
     .splash-screen {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       background: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
       filter: brightness(0.7);
       display: flex;
@@ -181,11 +155,11 @@
       text-align: center;
       color: white;
       text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0,0,0,0.4);
       padding: 50px 70px;
       border-radius: 80px;
       backdrop-filter: blur(10px);
-      border: 3px solid rgba(255, 215, 0, 0.7);
+      border: 3px solid rgba(255,215,0,0.7);
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
       animation: glow 2s infinite alternate;
     }
@@ -204,11 +178,9 @@
       from { box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
       to { box-shadow: 0 30px 60px rgba(196,155,63,0.5); }
     }
-
     #app {
       display: none;
     }
-
     h1 {
       text-align: center;
       font-weight: 700;
@@ -221,13 +193,11 @@
       justify-content: center;
       gap: 15px;
     }
-
     h1 i {
       font-size: 3rem;
     }
-
     .card {
-      background: rgba(10, 20, 30, 0.9);
+      background: rgba(10,20,30,0.9);
       backdrop-filter: blur(4px);
       color: #f0f3fa;
       padding: 28px;
@@ -237,18 +207,15 @@
       border: 1px solid rgba(255,215,0,0.1);
       transition: transform 0.2s;
     }
-
     .card:hover {
       transform: translateY(-2px);
       box-shadow: 0 30px 50px rgba(0,0,0,0.8);
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
-
     .stat-card {
       background: linear-gradient(145deg, #0f2a1a, #071a0e);
       color: #e6f0e6;
@@ -259,12 +226,10 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.5);
       transition: all 0.2s;
     }
-
     .stat-card:hover {
       border-color: #c49b3f;
       box-shadow: 0 15px 30px rgba(196,155,63,0.2);
     }
-
     .stat-card h3 {
       font-size: 1.3rem;
       margin-bottom: 15px;
@@ -273,17 +238,14 @@
       justify-content: center;
       gap: 10px;
     }
-
     .stat-card p {
       font-size: 2.2rem;
       font-weight: 700;
     }
-
     .three-dot {
       background: rgba(255,255,255,0.15);
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -292,12 +254,10 @@
       transition: 0.2s;
       margin-left: 8px;
     }
-
     .three-dot:hover {
       background: rgba(196,155,63,0.3);
       transform: scale(1.1);
     }
-
     .details {
       display: none;
       background: #10222e;
@@ -310,8 +270,6 @@
       overflow-y: auto;
       border: 1px solid #c49b3f30;
     }
-
-    /* ফর্ম এলিমেন্ট */
     input, select, button {
       width: 100%;
       padding: 16px 22px;
@@ -323,17 +281,14 @@
       font-size: 1.1rem;
       transition: 0.2s;
     }
-
     input::placeholder {
       color: #a0b0c0;
     }
-
     input:focus, select:focus {
       border-color: #c49b3f;
       box-shadow: 0 0 0 3px rgba(196,155,63,0.3);
       outline: none;
     }
-
     button {
       background: linear-gradient(145deg, #0b6b35, #0a4f2a);
       color: white;
@@ -344,29 +299,23 @@
       font-size: 1.2rem;
       transition: all 0.2s;
     }
-
     button:hover {
       background: linear-gradient(145deg, #0d7e3f, #0b6b35);
       transform: scale(1.02);
       box-shadow: 0 12px 24px rgba(0,0,0,0.6);
     }
-
     button i {
       margin-right: 10px;
     }
-
     .logout {
       background: linear-gradient(145deg, #8b0000, #5a0000);
     }
-
     .logout:hover {
       background: linear-gradient(145deg, #a00000, #6b0000);
     }
-
     .cancel-btn {
       background: #4a5568;
     }
-
     .section-title {
       font-weight: 700;
       font-size: 1.8rem;
@@ -378,15 +327,12 @@
       padding-bottom: 10px;
       margin-bottom: 25px;
     }
-
     .section-title i {
       font-size: 2rem;
     }
-
     .section-title .three-dot {
       margin-left: auto;
     }
-
     .search-wrapper {
       position: relative;
       display: flex;
@@ -396,7 +342,6 @@
       padding: 6px;
       margin-bottom: 30px;
     }
-
     .search-wrapper input {
       margin: 0;
       border: none;
@@ -406,18 +351,11 @@
       font-size: 1.1rem;
       flex: 1;
     }
-
-    .search-wrapper input:focus {
-      box-shadow: none;
-      background: transparent;
-    }
-
     .search-wrapper button {
       width: auto;
       padding: 14px 35px;
       margin: 0;
     }
-
     .autocomplete-dropdown {
       position: absolute;
       top: 100%;
@@ -442,13 +380,11 @@
       background: #2d3f55;
       color: #e4c580;
     }
-
     .member-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
-
     .member-card {
       background: #1c2a36;
       border-radius: 28px;
@@ -458,13 +394,11 @@
       transition: 0.2s;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
-
     .member-card:hover {
       transform: translateY(-4px);
       border-color: #c49b3f;
       box-shadow: 0 15px 30px rgba(196,155,63,0.15);
     }
-
     .member-card h4 {
       color: #e4c580;
       font-size: 1.4rem;
@@ -475,54 +409,44 @@
       justify-content: space-between;
       align-items: center;
     }
-
     .member-card p {
       font-size: 1.1rem;
       margin: 8px 0;
     }
-
     .card-actions {
       display: flex;
       gap: 8px;
     }
-
     .action-btn {
       background: transparent;
       border: none;
       color: #c49b3f;
       font-size: 1.3rem;
       cursor: pointer;
-      width: 40px;
-      height: 40px;
+      width: 40px; height: 40px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       transition: 0.2s;
     }
-
     .action-btn:hover {
-      background: rgba(196, 155, 63, 0.2);
+      background: rgba(196,155,63,0.2);
       transform: scale(1.1);
     }
-
     .delete-btn {
       color: #f87171;
     }
-
     .delete-btn:hover {
-      background: rgba(248, 113, 113, 0.2);
+      background: rgba(248,113,113,0.2);
     }
-
     .due-highlight {
       color: #ff9999;
       font-weight: 600;
     }
-
-    /* ক্যাটাগরি গ্রিড */
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
       gap: 15px;
       margin-top: 20px;
     }
@@ -539,8 +463,6 @@
       font-size: 1.1rem;
       font-weight: 500;
     }
-
-    /* প্রজেক্ট লিস্ট */
     .project-list {
       display: flex;
       flex-direction: column;
@@ -548,7 +470,7 @@
       margin: 20px 0;
     }
     .project-item {
-      background: rgba(30, 47, 58, 0.8);
+      background: rgba(30,47,58,0.8);
       border-radius: 60px;
       border: 1px solid #3f5568;
       overflow: hidden;
@@ -615,8 +537,6 @@
       padding: 12px;
       font-size: 1rem;
     }
-
-    /* টেবিল */
     .data-table, .work-table {
       width: 100%;
       border-collapse: collapse;
@@ -644,11 +564,6 @@
     .data-table tbody tr:hover, .work-table tbody tr:hover {
       background-color: #2d3f55;
     }
-    .data-table .action-btn {
-      font-size: 1.2rem;
-    }
-
-    /* বিস্তারিত মডাল */
     .detail-modal {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -717,8 +632,6 @@
       background: #8b0000;
       margin-top: 20px;
     }
-
-    /* ক্রেডিট কার্ড */
     .credit-card {
       text-align: center;
       margin-top: 30px;
@@ -790,15 +703,12 @@
       background: #8b0000;
       margin-top: 30px;
     }
-
     .hidden {
       display: none !important;
     }
-
     .admin-only {
       display: block;
     }
-
     .spinner {
       border: 5px solid rgba(255,215,0,0.1);
       border-left-color: #c49b3f;
@@ -808,9 +718,7 @@
       animation: spin 1s linear infinite;
       margin: 30px auto;
     }
-
     @keyframes spin { to { transform: rotate(360deg); } }
-
     .slider {
       padding: 0;
       border-radius: 40px;
@@ -823,14 +731,12 @@
       object-fit: cover;
     }
     .active-slide { display: block; }
-
     .footer-note {
       text-align: center;
       color: #e4c580;
       margin-top: 40px;
       font-size: 1.1rem;
     }
-
     @media (max-width: 600px) {
       body { font-size: 16px; }
       h1 { font-size: 2rem; }
@@ -845,10 +751,10 @@
   </style>
 </head>
 <body>
-
 <div id="bgLogin" class="login-bg"></div>
 <div id="bgApp" class="app-bg" style="display: none;"></div>
 
+<!-- স্প্ল্যাশ স্ক্রিন -->
 <div id="splashScreen" class="splash-screen">
   <div class="splash-content">
     <i class="fas fa-mosque"></i>
@@ -860,26 +766,22 @@
   <div class="container">
     <h1><i class="fas fa-mosque"></i> বাইতুল হামদ জামে মসজিদ <i class="fas fa-star"></i></h1>
 
-    <!-- লগইন বক্স + ইস্যু সমাধান নির্দেশনা -->
+    <!-- লগইন বক্স (সম্পূর্ণ ফাঁকা) -->
     <div id="loginBox" class="login-wrapper">
       <div style="width: 100%;">
         <div class="mosque-icon"><i class="fas fa-kaaba"></i></div>
         <h2><i class="fas fa-lock"></i> অ্যাডমিন লগইন</h2>
         <div class="subtitle">প্রবেশের জন্য আপনার ইমেইল ও পাসওয়ার্ড দিন</div>
-        <input type="email" id="email" placeholder="ইমেইল" autocomplete="off">
-        <input type="password" id="password" placeholder="পাসওয়ার্ড" autocomplete="off">
+        <input type="email" id="email" placeholder="ইমেইল" autocomplete="off" value="">
+        <input type="password" id="password" placeholder="পাসওয়ার্ড" autocomplete="off" value="">
         <button onclick="login()"><i class="fas fa-sign-in-alt"></i> ড্যাশবোর্ডে প্রবেশ</button>
         <div class="login-footer">
           <i class="fas fa-shield-alt"></i> শুধুমাত্র অনুমোদিত ইমাম ও সচিব
         </div>
-        <!-- লগইন ইস্যু সমাধান টিপস -->
-        <div style="margin-top: 20px; background: #f0e8d0; padding: 10px; border-radius: 20px; color: #000; font-size: 0.9rem;">
-          <i class="fas fa-info-circle"></i> লগইন না হলে: Firebase Console → Authentication → Users এ ইউজার তৈরি করুন (sanykhaled2@gmail.com / viewer@masjid.com)। Firestore Rules এ allow read, write: if true; দিন।
-        </div>
       </div>
     </div>
 
-    <!-- অ্যাপ -->
+    <!-- অ্যাপ (শুধু সফল লগইনের পর) -->
     <div id="app">
       <div id="loadingSpinner" class="spinner" style="display: none;"></div>
 
@@ -911,7 +813,7 @@
         <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=2070&auto=format&fit=crop" class="slide-img" alt="মসজিদ বাহির">
       </div>
 
-      <!-- সদস্য ব্যবস্থাপনা (সবার জন্য) -->
+      <!-- সদস্য ব্যবস্থাপনা -->
       <div class="card">
         <div class="section-title"><i class="fas fa-users"></i> সদস্য ব্যবস্থাপনা</div>
         <div class="search-wrapper">
@@ -921,7 +823,7 @@
         </div>
         <div id="memberListContainer" class="member-grid"></div>
 
-        <!-- অ্যাডমিন-শুধু অংশ: নতুন সদস্য যুক্ত / সংশোধন -->
+        <!-- অ্যাডমিন-শুধু অংশ -->
         <div id="adminMemberForm" class="admin-only" style="display: none;">
           <hr style="margin: 30px 0; border-color: #2f4050;">
           <div style="font-weight:700; margin-bottom:15px; font-size:1.3rem;"><i class="fas fa-user-plus"></i> সদস্য যুক্ত / সংশোধন</div>
@@ -935,30 +837,25 @@
         </div>
       </div>
 
-      <!-- ক্যাটাগরি ম্যানেজমেন্ট (শুধু অ্যাডমিন) -->
+      <!-- আয়ের খাত ও ব্যয়ের খাত (শুধু অ্যাডমিন) -->
       <div id="adminCategories" class="admin-only" style="display: none;">
         <div class="card">
           <div class="section-title">
             <i class="fas fa-tags" style="color:#a5d6a5;"></i> আয়ের খাত
             <span class="three-dot" onclick="toggleIncomeCategoryGrid()">⋮</span>
           </div>
-          <div id="incomeCategoryGrid" class="category-grid hidden">
-            <!-- ডায়নামিক কন্টেন্ট -->
-          </div>
+          <div id="incomeCategoryGrid" class="category-grid hidden"></div>
           <div style="display: flex; gap: 10px; margin-top: 20px;">
             <input type="text" id="newIncomeCategory" placeholder="নতুন খাতের নাম">
             <button onclick="addIncomeCategory()" style="width: auto;"><i class="fas fa-plus"></i> যোগ</button>
           </div>
         </div>
-
         <div class="card">
           <div class="section-title">
             <i class="fas fa-tags" style="color:#f9a8a8;"></i> ব্যয়ের খাত
             <span class="three-dot" onclick="toggleExpenseCategoryGrid()">⋮</span>
           </div>
-          <div id="expenseCategoryGrid" class="category-grid hidden">
-            <!-- ডায়নামিক কন্টেন্ট -->
-          </div>
+          <div id="expenseCategoryGrid" class="category-grid hidden"></div>
           <div style="display: flex; gap: 10px; margin-top: 20px;">
             <input type="text" id="newExpenseCategory" placeholder="নতুন খাতের নাম">
             <button onclick="addExpenseCategory()" style="width: auto;"><i class="fas fa-plus"></i> যোগ</button>
@@ -973,20 +870,11 @@
           <span class="three-dot" onclick="toggleTable('incomeTable')">⋮</span>
         </div>
         <table class="data-table hidden" id="incomeTable">
-          <thead>
-            <tr>
-              <th>বিভাগ</th>
-              <th>পরিমাণ</th>
-              <th>তারিখ</th>
-              <th>অ্যাকশন</th>
-              <th>বিস্তারিত</th>
-            </tr>
-          </thead>
+          <thead><tr><th>বিভাগ</th><th>পরিমাণ</th><th>তারিখ</th><th>অ্যাকশন</th><th>বিস্তারিত</th></tr></thead>
           <tbody id="incomeTableBody"></tbody>
         </table>
-        <!-- অ্যাডমিন-শুধু ফর্ম -->
         <div id="adminIncomeForm" class="admin-only" style="display: none;">
-          <hr style="margin: 20px 0; border-color: #2f4050;">
+          <hr style="margin:20px0; border-color:#2f4050;">
           <div style="font-weight:700; margin-bottom:15px; font-size:1.3rem;"><i class="fas fa-pen"></i> আয় যোগ / সংশোধন</div>
           <select id="incomeCategorySelect"></select>
           <input type="number" id="incomeAmount" placeholder="টাকা">
@@ -1004,19 +892,11 @@
           <span class="three-dot" onclick="toggleTable('expenseTable')">⋮</span>
         </div>
         <table class="data-table hidden" id="expenseTable">
-          <thead>
-            <tr>
-              <th>বিভাগ</th>
-              <th>পরিমাণ</th>
-              <th>অ্যাকশন</th>
-              <th>বিস্তারিত</th>
-            </tr>
-          </thead>
+          <thead><tr><th>বিভাগ</th><th>পরিমাণ</th><th>অ্যাকশন</th><th>বিস্তারিত</th></tr></thead>
           <tbody id="expenseTableBody"></tbody>
         </table>
-        <!-- অ্যাডমিন-শুধু ফর্ম -->
         <div id="adminExpenseForm" class="admin-only" style="display: none;">
-          <hr style="margin: 20px 0; border-color: #2f4050;">
+          <hr style="margin:20px0; border-color:#2f4050;">
           <div style="font-weight:700; margin-bottom:15px; font-size:1.3rem;"><i class="fas fa-pen"></i> ব্যয় যোগ / সংশোধন</div>
           <select id="expenseCategorySelect"></select>
           <input type="number" id="expenseAmount" placeholder="টাকা">
@@ -1033,9 +913,8 @@
           <span class="three-dot" onclick="toggleProjectList()">⋮</span>
         </div>
         <div id="projectListContainer" class="project-list hidden"></div>
-        <!-- অ্যাডমিন-শুধু ফর্ম -->
         <div id="adminWorkForm" class="admin-only" style="display: none;">
-          <hr style="margin: 20px 0; border-color: #2f4050;">
+          <hr style="margin:20px0; border-color:#2f4050;">
           <div style="font-weight:700; margin-bottom:15px; font-size:1.3rem;"><i class="fas fa-pen"></i> নতুন কাজ যোগ করুন</div>
           <input id="workName" placeholder="কাজের নাম">
           <input id="workBudget" type="number" placeholder="বাজেট (টাকা)">
@@ -1050,7 +929,7 @@
         </div>
       </div>
 
-      <!-- বিস্তারিত মডাল (আয়ের জন্য) -->
+      <!-- বিস্তারিত মডাল -->
       <div id="incomeDetailModal" class="detail-modal hidden">
         <div class="detail-modal-content">
           <h3 id="incomeDetailModalTitle">আয়ের বিস্তারিত</h3>
@@ -1063,8 +942,6 @@
           <button class="close-modal" onclick="closeIncomeDetailModal()">বন্ধ</button>
         </div>
       </div>
-
-      <!-- বিস্তারিত মডাল (ব্যয়ের জন্য) -->
       <div id="expenseDetailModal" class="detail-modal hidden">
         <div class="detail-modal-content">
           <h3 id="expenseDetailModalTitle">ব্যয়ের বিস্তারিত</h3>
@@ -1078,14 +955,14 @@
         </div>
       </div>
 
-      <!-- ক্রেডিট মডাল (খালেদ সানী) -->
+      <!-- ক্রেডিট মডাল -->
       <div id="creditModal" class="credit-modal hidden">
         <div class="credit-modal-content">
           <h2><i class="fas fa-code"></i> ক্রেডিট</h2>
           <div class="credit-info">
             <p><i class="fas fa-user"></i> <strong>নাম:</strong> খালেদ হাসান সানী</p>
             <p><i class="fas fa-briefcase"></i> <strong>কর্মরত:</strong> <a href="https://www.facebook.com/hudhudTours" target="_blank">হুদহুদ ট্যুরস এন্ড ট্রাভেলস</a> (সহকারী ম্যানেজার)</p>
-            <p><i class="fas fa-phone-alt"></i> <strong>মোবাইল:</strong> <a href="tel:+8801737884725">01737884725</a> (হোয়াটসঅ্যাপ)</p>
+            <p><i class="fas fa-phone-alt"></i> <strong>মোবাইল:</strong> <a href="tel:+8801737884725">০১৭৩৭৮৮৪৭২৫</a> (হোয়াটসঅ্যাপ)</p>
           </div>
           <button class="close-credit" onclick="closeCreditModal()">বন্ধ</button>
         </div>
@@ -1111,7 +988,7 @@
   import { getFirestore, collection, addDoc, setDoc, doc, getDocs, query, where, deleteDoc, getDoc, writeBatch } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
   const firebaseConfig = {
-     apiKey: "AIzaSyDdKl5_qwWboVsR3x8obQ_R-IumB6wzpp8",
+    apiKey: "AIzaSyDdKl5_qwWboVsR3x8obQ_R-IumB6wzpp8",
   authDomain: "baitul-hamd-jame-masjid-6ea16.firebaseapp.com",
   projectId: "baitul-hamd-jame-masjid-6ea16",
   storageBucket: "baitul-hamd-jame-masjid-6ea16.firebasestorage.app",
@@ -1142,7 +1019,7 @@
   const autocompleteDropdown = document.getElementById('autocompleteDropdown');
   const memberContainer = document.getElementById('memberListContainer');
 
-  // ক্যাটাগরি টগল
+  // ক্যাটাগরি গ্রিড টগলের জন্য
   window.toggleIncomeCategoryGrid = () => {
     document.getElementById('incomeCategoryGrid').classList.toggle('hidden');
   };
@@ -1207,7 +1084,7 @@
     document.getElementById('incomeDetailName').value = '';
     document.getElementById('incomeDetailAmount').value = '';
     loadIncomeDetails(currentIncomeId);
-    loadIncomeDetails();
+    loadIncomeDetails(); // মূল আয়ের টোটাল আপডেট করতে
   };
   window.deleteIncomeDetail = async (detailId) => {
     if (currentUserRole !== 'admin') return;
@@ -1831,7 +1708,6 @@
     memberContainer.innerHTML = html;
   }
 
-  // অটোসাজেশন
   window.handleSearchInput = () => {
     const input = searchInput.value.trim().toLowerCase();
     if (input === '') {
@@ -1839,10 +1715,7 @@
       memberContainer.innerHTML = '';
       return;
     }
-    const matches = allMembers
-      .map(m => m.name)
-      .filter(name => name.toLowerCase().includes(input))
-      .slice(0, 10);
+    const matches = allMembers.map(m => m.name).filter(name => name.toLowerCase().includes(input)).slice(0,10);
     if (matches.length > 0) {
       let dropdownHtml = '';
       matches.forEach(name => {
@@ -1862,9 +1735,7 @@
   };
 
   window.hideAutocomplete = () => {
-    setTimeout(() => {
-      autocompleteDropdown.style.display = 'none';
-    }, 200);
+    setTimeout(() => autocompleteDropdown.style.display = 'none', 200);
   };
 
   window.filterMembers = () => {
@@ -1959,7 +1830,6 @@
     el.style.display = el.style.display === 'none' ? 'block' : 'none';
   };
 
-  // স্লাইডার
   let slideIndex = 0;
   function showSlides() {
     const slides = document.getElementsByClassName('slide-img');
