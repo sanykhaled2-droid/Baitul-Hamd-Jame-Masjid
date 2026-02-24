@@ -152,6 +152,20 @@
     .detail-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px dashed #2f4050; }
     .detail-label { color:#a0b0c0; }
     .detail-value { color:#f0f3fa; font-weight:600; }
+    /* নতুন: পরিমাণ ইনপুটের জন্য স্টাইল */
+    .detail-value input[type=number] {
+      background: #1e2a36;
+      border: 1px solid #c49b3f;
+      border-radius: 30px;
+      padding: 8px 15px;
+      color: white;
+      width: 120px;
+      text-align: center;
+    }
+    .detail-value input:disabled {
+      opacity: 0.6;
+      border-color: #2d3f55;
+    }
     .detail-actions { display:flex; justify-content:space-between; gap:10px; margin-top:20px; }
     .detail-actions button { width:48%; padding:12px; font-size:1rem; }
     .data-table, .work-table { width:100%; border-collapse:collapse; background:#1e2f3a; border-radius:24px; overflow:hidden; font-size:1.1rem; margin-top:20px; box-shadow:0 10px 20px rgba(0,0,0,0.3); }
@@ -206,6 +220,7 @@
       .data-table td, .work-table td { padding:8px; }
       .member-card { padding:15px; }
       .detail-modal-content { padding:20px; }
+      .detail-value input[type=number] { width:100px; }
     }
     /* ট্যাবলেটের জন্য */
     @media (min-width:601px) and (max-width:900px) {
@@ -386,7 +401,7 @@
         </div>
       </div>
 
-      <!-- প্রকল্প ও কাজ (আপডেটেড: আরো টাকা লাগবে অপশন) -->
+      <!-- প্রকল্প ও কাজ (আপডেটেড: আরো টাকা লাগবে ও টাকার পরিমাণ) -->
       <div class="card">
         <div class="section-title">
           <i class="fas fa-hammer"></i> প্রকল্প ও কাজ
@@ -404,7 +419,6 @@
             <option value="upcoming">আগামী</option>
             <option value="completed">সম্পন্ন</option>
           </select>
-          <!-- নতুন কাজের জন্য extraFundRequired ডিফল্ট false -->
           <input type="hidden" id="editingWorkId" value="">
           <button onclick="addWork()" id="workSubmitBtn"><i class="fas fa-plus"></i> কাজ যোগ</button>
           <button class="cancel-btn" onclick="cancelWorkEdit()" id="cancelWorkBtn" style="display: none;">বাতিল</button>
@@ -921,7 +935,7 @@
     });
   }
 
-  // ---------- প্রকল্প ও কাজ (আপডেটেড: আরো টাকা লাগবে) ----------
+  // ---------- প্রকল্প ও কাজ (আপডেটেড: আরো টাকা লাগবে ও টাকার পরিমাণ) ----------
   async function loadWorks() {
     const snap = await getDocs(collection(db, 'works'));
     const container = document.getElementById('projectListContainer');
@@ -943,9 +957,9 @@
           </div>`
         : '';
       
-      // extraFundRequired ফিল্ড ডিফল্ট false
       const extraFundChecked = w.extraFundRequired ? 'checked' : '';
       const toggleDisabled = currentUserRole !== 'admin' ? 'disabled' : '';
+      const amountDisabled = currentUserRole !== 'admin' ? 'disabled' : '';
 
       html += `
         <div class="project-item">
@@ -970,6 +984,12 @@
                 </label>
               </span>
             </div>
+            <div class="detail-row">
+              <span class="detail-label">প্রয়োজনীয় অতিরিক্ত টাকা</span>
+              <span class="detail-value">
+                <input type="number" id="extraAmount-${workId}" value="${w.extraFundAmount || 0}" ${amountDisabled} onchange="updateExtraFundAmount('${workId}', this.value)">
+              </span>
+            </div>
             ${actionButtons}
           </div>
         </div>
@@ -983,12 +1003,26 @@
     if (currentUserRole !== 'admin') return;
     try {
       await setDoc(doc(db, 'works', workId), { extraFundRequired: value }, { merge: true });
-      // সরাসরি UI আপডেট করার দরকার নেই, কারণ টগল ইতিমধ্যে UI-তে পরিবর্তিত হয়েছে
     } catch (e) {
       console.error('Error updating extra fund:', e);
       alert('আপডেট ব্যর্থ');
-      // রিলোড করে আগের অবস্থায় ফিরিয়ে আনা যেতে পারে
-      loadWorks();
+      loadWorks(); // পুনরায় লোড করে আগের অবস্থায় ফিরিয়ে আনা
+    }
+  };
+
+  // অতিরিক্ত টাকার পরিমাণ আপডেট
+  window.updateExtraFundAmount = async (workId, value) => {
+    if (currentUserRole !== 'admin') return;
+    const amount = Number(value);
+    if (isNaN(amount) || amount < 0) {
+      alert('সঠিক পরিমাণ দিন');
+      return;
+    }
+    try {
+      await setDoc(doc(db, 'works', workId), { extraFundAmount: amount }, { merge: true });
+    } catch (e) {
+      console.error('Error updating extra fund amount:', e);
+      alert('আপডেট ব্যর্থ');
     }
   };
 
@@ -1004,7 +1038,7 @@
     const status = document.getElementById('workStatus').value;
     const editingId = document.getElementById('editingWorkId').value;
     if (!name || !budget) return alert('নাম ও বাজেট দিন');
-    const data = { name, budget, status, extraFundRequired: false }; // ডিফল্ট false
+    const data = { name, budget, status, extraFundRequired: false, extraFundAmount: 0 };
     if (editingId) {
       await setDoc(doc(db, 'works', editingId), data, { merge: true });
       document.getElementById('editingWorkId').value = '';
